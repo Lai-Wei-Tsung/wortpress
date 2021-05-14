@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css'
+        integrity='sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=='
+        crossorigin='anonymous' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+        integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+        crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js'
+        integrity='sha512-nw7zwODD4UD9u/C/CO+03s7jXvOZDomBNFX3oOq7Xv0stAyxsxhJzVlxsRTgH3AxK3sK2ijMQou2aSIaorp19g=='
+        crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./Content/Site/diary_editor.css">
+    <title>大事紀要編輯器範例</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <div class="table-responsive" style="max-width: 960px;">
+                    <table class="editor-table table table-bordered text-nowrap">
+                        <tr>
+                            <td class="text-nowrap">
+                                <label for="Day" class="form-label">日期</label>
+                            </td>
+                            <td class="w-100">
+                                <select name="Year" id="Year" class="form-control w-auto d-inline-block">
+                                    <option value="110">110</option>
+                                    <option value="109110">109</option>
+                                    <option value="108">108</option>
+                                    <option value="107">107</option>
+                                    <option value="106">106</option>
+                                    <option value="0">...</option>
+                                </select>
+                                年
+                                <select name="Month" id="Month" class="form-control w-auto d-inline-block">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                月
+                                <select name="Day" id="Day" class="form-control w-auto d-inline-block">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                                日
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Time" class="form-label">時間</label>
+                            </td>
+                            <td>
+                                <input type="text" name="Time" id="Time" class="form-control d-inline-block"
+                                    style="width:4rem">
+                                時（請輸入四碼數字）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Event" class="form-label">項目</label>
+                            </td>
+                            <td>
+                                <!-- TinyMCE編輯器 #diaryEvent -->
+                                <div name="Event" id="diaryEvent" rows="1" class="form-control editor"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Content" class="form-label">內容</label>
+                            </td>
+                            <td>
+                                <!-- TinyMCE編輯器 #diaryContent -->
+                                <div name="Content" id="diaryContent" rows="10" class="form-control editor"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-nowrap">
+                                <label for="Day" class="form-label">保密<br />期限</label>
+                            </td>
+                            <td class="w-100 align-middle">
+                                <input type="text" name="CoverYear" id="CoverYear" class="form-control d-inline-block"
+                                    style="width: 3.5rem;" value="120">
+                                年
+                                <select name="CoverMonth" id="CoverMonth" class="form-control w-auto d-inline-block">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                月
+                                <select name="CoverDay" id="CoverDay" class="form-control w-auto d-inline-block">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                                日
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="form-label">預覽</label>
+                            </td>
+                            <td>
+                                <div class="text-wrap">
+                                    <table class="preview-table">
+                                        <tr>
+                                            <th>
+                                                月
+                                            </th>
+                                            <th>
+                                                日
+                                            </th>
+                                            <th>
+                                                項目
+                                            </th>
+                                            <th>
+                                                內容
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td id="displayMonth">
+                                            </td>
+                                            <td id="displayDay">
+                                            </td>
+                                            <td id="displayEvent">
+                                            </td>
+                                            <td id="displayContent">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="form-label">遮罩<br />預覽</label>
+                            </td>
+                            <td>
+                                <div class="text-wrap">
+                                    <table class="preview-table">
+                                        <tr>
+                                            <th>
+                                                月
+                                            </th>
+                                            <th>
+                                                日
+                                            </th>
+                                            <th>
+                                                項目
+                                            </th>
+                                            <th>
+                                                內容
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td id="coverMonth">
+                                            </td>
+                                            <td id="coverDay">
+                                            </td>
+                                            <td id="coverEvent">
+                                            </td>
+                                            <td id="coverContent">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Scripts/tinymce/tinymce.min.js"></script>
+    <script src="./Scripts/Site/DiaryEditor/diary-editor.js"></script>
+    <script>
+        $(function () {
+            init();
+            bindEvent();
+            toDemo(); //可以用Razor C#取代的一些功能
+        });
+    </script>
+    <script>
+        /**初始化預覽內容 */
+        function init() {
+            $("#displayMonth").html($("#Month").find(":selected").val());
+            $("#displayDay").html($("#Day").find(":selected").val());
+            $("#displayEvent").html($("#Event").val());
+            $("#coverMonth").html($("#Month").find(":selected").val());
+            $("#coverDay").html($("#Day").find(":selected").val());
+            $("#coverEvent").html($("#Event").val());
+        }
+
+        /**綁定動態預覽 */
+        function bindEvent() {
+            //月
+            $("#Month").on("change", function () {
+                $("#displayMonth").html($(this).find(":selected").val());
+                $("#coverMonth").html($(this).find(":selected").val());
+            })
+
+            //日
+            $("#Day").on("change", function () {
+                $("#displayDay").html($(this).find(":selected").val());
+                $("#coverDay").html($(this).find(":selected").val());
+            })
+
+            //項目
+            $("#diaryEvent").on("change keyup", function () {
+                changeDisplayEvent();
+            })
+
+            //時
+            $("#Time").on("change keyup", function () {
+                changeDisplayContent();
+            })
+            //內容
+            $("#diaryContent").on("change keyup", function () {
+                changeDisplayContent();
+            })
+        }
+
+        /**項目預覽 */
+        function changeDisplayEvent() {
+            let content = "";
+            content += tinymce.get("diaryEvent").getContent();// 取得編輯器的文字
+            $("#displayEvent").html(content);
+            $("#coverEvent").html(content);
+
+            //用jQuery替換機敏遮罩文字
+            let covers = $("#coverEvent cover");//找出遮罩文字的節點
+            covers.each(function () {
+                let innerContent = $(this).text();
+                if (innerContent && innerContent.length) {
+                    let length = innerContent.length;
+                    let coverText = ('○').repeat(length);//替換文字
+                    $(this).replaceWith(coverText)//替換整個節點
+                }
+            });
+            // console.log(covers)
+        }
+
+        /**內容預覽 */
+        function changeDisplayContent() {
+            let content = "";
+            if ($("#Time").val()) {
+                content = $("#Time").val() + " 時";
+            }
+            content += tinymce.get("diaryContent").getContent();// 取得編輯器的文字
+            $("#displayContent").html(content);
+            $("#coverContent").html(content);
+
+            //用jQuery替換機敏遮罩文字
+            let covers = $("#coverContent cover");//找出遮罩文字的節點
+            covers.each(function () {
+                let innerContent = $(this).text();
+                if (innerContent && innerContent.length) {
+                    let length = innerContent.length;
+                    let coverText = ('○').repeat(length);//替換文字
+                    $(this).replaceWith(coverText)//替換整個節點
+                }
+            });
+            // console.log(covers)
+        }
+    </script>
+    <script>
+        function toDemo() {
+            // 將"日期"預設為今日
+            var today = new Date();
+            var yyy = today.getFullYear() - 1911;
+            var mm = today.getMonth() + 1;
+            var dd = today.getDate();
+            $("select#Year").val(yyy).change();
+            $("select#Month").val(mm).change();
+            $("select#Day").val(dd).change();
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+D:\apmtech\史編\測試專案\史編範例\ArchivesDemo\DiaryExportClient\bin\Debug\DiaryExportClient.exe.config
+D:\apmtech\史編\測試專案\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csprojAssemblyReference.cache
+D:\apmtech\史編\測試專案\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csproj.CoreCompileInputs.cache
+D:\apmtech\史編\測試專案\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.exe
+D:\apmtech\史編\測試專案\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.pdb
+C:\Users\iamha\OneDrive\桌面\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csprojAssemblyReference.cache
+C:\Users\iamha\OneDrive\桌面\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csproj.CoreCompileInputs.cache
+C:\Users\iamha\OneDrive\桌面\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.exe
+C:\Users\iamha\OneDrive\桌面\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.pdb
+C:\Users\iamha\OneDrive\桌面\史邊資料夾\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csprojAssemblyReference.cache
+C:\Users\iamha\OneDrive\桌面\史邊資料夾\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.csproj.CoreCompileInputs.cache
+C:\Users\iamha\OneDrive\桌面\史邊資料夾\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.exe
+C:\Users\iamha\OneDrive\桌面\史邊資料夾\史編範例\ArchivesDemo\DiaryExportClient\obj\Debug\DiaryExportClient.pdb
